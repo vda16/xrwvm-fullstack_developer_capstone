@@ -27,6 +27,7 @@ const Dealers = () => {
   }
 
   const get_dealers = async ()=>{
+    debugger;
     const res = await fetch(dealer_url, {
       method: "GET"
     });
