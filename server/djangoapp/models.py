@@ -11,7 +11,7 @@ class CarMake(models.Model):
     def __str__(self):
         return self.name
   
- class CarModel(models.Model):
+class CarModel(models.Model):
     car_make = models.ForeignKey(CarMake,
     on_delete= models.CASCADE)  # Many-to-One relationship
     name = models.CharField(max_length=100)
