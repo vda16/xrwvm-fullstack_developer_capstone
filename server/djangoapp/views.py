@@ -53,7 +53,7 @@ def login_user(request):
         # Check if user already exists
         User.objects.get(username=username)
         username_exist = True
-    except:
+    except Exception as err::
         # If not, simply log this is a new user
         logger.debug("{} is new user".format(username))
 
@@ -103,7 +103,7 @@ def login_user(request):
     if (not request.user.is_anonymous):
         try:
             return JsonResponse({"status": 200})
-        except:
+        except Exception as err::
             return JsonResponse({"status": 401, "message": 
             "Error in posting review"})
     else:
